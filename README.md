@@ -1,6 +1,6 @@
 Langkah langkah kolaborasi :
 1. Buat branch sendiri sesuai dengan fitur2nya
-2. Jangan push ke branch main, push sesuai fungsinya
+2. Jangan push ke branch main, push sesuai branch / fungsinya
 
 
 Langkah mengerjakan 
