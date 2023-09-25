@@ -17,7 +17,7 @@ $(document).ready(function () {
         "margin-left": "10px",
         "box-shadow": "3px 3px 9px black",
     });
-    $(".tombol, .tombol-order").hover(
+    $(".tombol, .tombol-order, img").hover(
         function () {
             $(this).css({
                 transform: "scale(1.1)",
@@ -32,27 +32,25 @@ $(document).ready(function () {
     );
 });
 
-
-
 // fungsi untuk Contact Us
 // mengirimkan pesan ketika tombol submit di klik
 function sendMessage() {
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const comment = document.getElementById('comment').value;
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const comment = document.getElementById("comment").value;
 
     if (name == "" || email == "" || comment == "") {
-        swal.fire("Isi semua data terlebih dahulu")
+        swal.fire("Isi semua data terlebih dahulu");
     } else {
         // nomer wa yang akan menerima pesan
-        const phoneNumber = '+6285646044393';
-    
+        const phoneNumber = "+6285646044393";
+
         // isi pesannya mengambil dari name, email dan isi comentar
         const message = `Name: ${name}%0AEmail: ${email}%0AComment: ${comment}`;
-    
+
         // membuat url ke whatsapp dan memuat isi pesannya
         const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
-    
+
         // Redirect ke WhatsApp
         window.location.href = whatsappURL;
     }
@@ -60,9 +58,9 @@ function sendMessage() {
 
 // Function to clear form inputs
 function clearForm() {
-    document.getElementById('name').value = '';
-    document.getElementById('email').value = '';
-    document.getElementById('comment').value = '';
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("comment").value = "";
 }
 
 // Call clearForm() function when the page loads
