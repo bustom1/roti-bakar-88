@@ -20,7 +20,7 @@
     </head>
     <body>
         <!-- Start Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-danger">
+        <nav class="navbar navbar-expand-lg navbar-light bg-danger" id="home">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
                     <img
@@ -45,16 +45,16 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link active text-white fs-5" aria-current="page" href="#">Home</a>
+                                <a class="nav-link active text-white fs-5" aria-current="page" href="#home">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active text-white fs-5" aria-current="page" href="#">product</a>
+                                <a class="nav-link active text-white fs-5" aria-current="page" href="#product">Product</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active text-white fs-5" aria-current="page" href="#">about</a>
+                                <a class="nav-link active text-white fs-5" aria-current="page" href="#about">About</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active text-white fs-5" aria-current="page" href="#">contact</a>
+                                <a class="nav-link active text-white fs-5" aria-current="page" href="#contact">Contact</a>
                             </li>
                         </ul>
                         <form class="d-flex">
@@ -106,7 +106,7 @@
         </div>
         <!-- End Navbar -->
         <!-- Start Product -->
-        <section class="product_section">
+        <section class="product_section" id="product">
             <div class="container">
                 <div class="text-start fw-bold fs-3">Rekomendasi</div>
                 <div class="content">
@@ -334,8 +334,9 @@
             </div>
         </section>
         <!-- End Product -->
+
         <!--  Start About-->
-        <div class="container-fluid pt-4">
+        <div class="container-fluid pt-4" id="about">
             <div class="row justify-content-xl-evenly">
                 <div class="col-4">
                     <h2>About</h2>
@@ -350,6 +351,7 @@
             </div>
         </div>
         <!--  End About-->
+
         <!-- Start FAQ -->
         <div class="container">
             <div class="container-fluid">
@@ -539,8 +541,9 @@
             </div>
         </div>
         <!-- End FAQ -->
+
         <!-- Start Contact -->
-        <div class="container contact pt-4 mb-5">
+        <div class="container contact pt-4 mb-5" id="contact">
             <div class="row">
                 <div class="col-md-3">
                     <div class="contact-info">
@@ -582,7 +585,7 @@
                         </div>
                         <div class="form-group ">
                             <div class="col-sm-offset-2 col-sm-10 pt-3">
-                                <button type="submit" class="btn btn-default btn-info">Submit</button>
+                                <button type="submit" class="btn btn-default btn-info" onclick="sendMessage()">Submit</button>
                             </div>
                         </div>
                     </div>
@@ -590,6 +593,7 @@
             </div>
         </div>
         <!-- End Contact -->
+
         <script type="text/javascript" src="js/script.js"></script>
     </body>
 </html>
