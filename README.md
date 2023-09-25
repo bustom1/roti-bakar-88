@@ -12,3 +12,5 @@ Langkah mengerjakan
 5. git commit -m "comentar perubahan"   => untuk menandai  perubahan apa saja yang di lakukan
 6. git push --set-upstream origin {nama branch}   => untuk push file sekalian membuat branch baru di github
 
+Link design figma
+https://www.figma.com/file/DhCZFVQ09A5yq1nDs3LuDj/roti-bakar-88?type=design&node-id=0%3A1&mode=dev
