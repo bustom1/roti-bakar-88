@@ -58,12 +58,12 @@ function sendMessage() {
     }
 }
 
-// Function to clear form inputs
+// Function untuk membbersihkan isi comentar ketika di load
 function clearForm() {
     document.getElementById('name').value = '';
     document.getElementById('email').value = '';
     document.getElementById('comment').value = '';
 }
 
-// Call clearForm() function when the page loads
+// panggil fungsi clearform ketika baru di load
 window.onload = clearForm;
