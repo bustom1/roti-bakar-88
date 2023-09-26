@@ -17,11 +17,11 @@ $(document).ready(function () {
         "margin-left": "10px",
         "box-shadow": "3px 3px 9px black",
     });
-    $(".tombol, .tombol-order, img").hover(
+    $(".tombol, .tombol-order, img, .a-tab").hover(
         function () {
             $(this).css({
                 transform: "scale(1.1)",
-                transition: "1s",
+                transition: "0.2s",
             });
         },
         function () {
@@ -30,6 +30,40 @@ $(document).ready(function () {
             });
         }
     );
+
+    // show modal pop up
+    $(".tombol").click(function () {
+        var modalContent = `
+         "<div class="modal fade" id="detailModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content" style="color: black">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="detailModelLabel">Detail Produk</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                   
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil corporis consequatur praesentium itaque minima molestiae magnam minus, soluta atque dolorum ad tenetur id maxime delectus, expedita recusandae voluptatem eos! Optio!
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>"
+        `;
+        $("#outputModal").append(modalContent);
+        $("#outputModal, .modal").modal("show");
+
+        $("#detailModal").on("hidden.bs.modal", function () {
+            // Sembunyikan modal
+            $(this).modal("hide");
+            // Hapus modal
+            $(this).remove();
+            // Hapus modal-backdrop
+            $(".modal-bs-backdrop").remove();
+        });
+    });
 });
 
 // fungsi untuk Contact Us
