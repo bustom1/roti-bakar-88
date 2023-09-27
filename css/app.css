@@ -1,7 +1,17 @@
 .red-default-app {
-  color: #E94949;
+  color: #e94949;
 }
 
 .bg-testimoni {
   background-color: rgb(254, 251, 199);
-}/*# sourceMappingURL=app.css.map */
+}
+
+p {
+  text-align: justify;
+}
+p span {
+  color: #e94949;
+  text-decoration-line: underline;
+}
+
+/*# sourceMappingURL=app.css.map */
