@@ -92,15 +92,15 @@ function sendMessage() {
             var hours = String(now.getHours()).padStart(2, '0');
             var minutes = String(now.getMinutes()).padStart(2, '0');
             var seconds = String(now.getSeconds()).padStart(2, '0');
-          
+
             return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}`;
-          }          
-        
+        }
+
         const data = {
             name: name,
             email: email,
             comment: comment,
-             created_at: getCurrentDateTime()
+            created_at: getCurrentDateTime()
         }
         $.ajax({
             url: "https://sheetdb.io/api/v1/spy3e14n4mke2",
@@ -118,7 +118,56 @@ function sendMessage() {
 }
 
 
+function allData() {
+    swal.fire({
+        title: "Mencari Data...",
+        text: "Mohon tunggu !!!",
+        icon: "https://media.tenor.com/je-huTL1vwgAAAAi/loading-buffering.gif",
+        
+    });
 
+    // $("#isiProduct").empty();
+
+    $.ajax({
+        url: 'https://sheetdb.io/api/v1/9gvkzok724476',
+        type: 'GET',
+        success: function(res){
+            if(res.length == 0){
+                swal.fire("Data tidak di temukan")
+            }else{
+                for (let i = 0; i < res.length; i++) {
+                    const dataProduct = res[i];
+                    
+                    const isiProduct = ` <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
+                    <div class="card bg-danger p-2 justify-content-center align-items-center" style="box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.8)">
+                        <img src="${dataProduct.img}" class="card-img-top" alt="...">
+                        <div class="card-body text-light">
+                            <h5 class="card-title text-center">${dataProduct.name}</h5>
+                            <p class="card-text">Rp.${dataProduct.price}</p>
+                            <!-- Modal -->
+                            <div id="outputModal">
+                                <!-- isi Modal --></div>
+                            <!-- endModal -->
+                            <button
+                                type="button"
+                                class="btn tombol btn-success m-md-2"
+                                data-bs-toggle="modal"
+                                data-bs-target="#detailModal"
+                            >Lihat Detail</button>
+
+                            <a href="https://api.whatsapp.com/send?phone=6285646044393&text=Saya%20Pesan%20${dataProduct.name}%20jumlah%20satu%20harga%20Rp.${dataProduct.price}" class="btn tombol-order btn-success">Order</a>
+                        </div>
+                    </div>
+                </div>`
+
+                $("#isiProduct").append(isiProduct)
+                }
+            }
+            swal.close();
+        }
+    })
+}
 
 // panggil fungsi clearform ketika baru di load
 window.onload = clearForm;
+window.onload = allData;
