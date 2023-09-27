@@ -153,6 +153,7 @@ function allProduct() {
                                 class="btn tombol btn-success m-md-2"
                                 data-bs-toggle="modal"
                                 data-bs-target="#detailModal"
+                                onclick="showDetail('${dataProduct.img}','${dataProduct.name}', '${dataProduct.price}')"
                             >Lihat Detail</button>
 
                             <a href="https://api.whatsapp.com/send?phone=6285646044393&text=Saya%20Pesan%20${dataProduct.name}%20jumlah%20satu%20harga%20Rp.${dataProduct.price}" class="btn tombol-order btn-success">Order</a>
@@ -203,6 +204,7 @@ function productMakanan() {
                                     class="btn tombol btn-success m-md-2"
                                     data-bs-toggle="modal"
                                     data-bs-target="#detailModal"
+                                    onclick="showDetail('${dataProduct.img}','${dataProduct.name}', '${dataProduct.price}')"
                                 >Lihat Detail</button>
     
                                 <a href="https://api.whatsapp.com/send?phone=6285646044393&text=Saya%20Pesan%20${dataProduct.name}%20jumlah%20satu%20harga%20Rp.${dataProduct.price}" class="btn tombol-order btn-success">Order</a>
@@ -255,6 +257,7 @@ function productMinuman() {
                                     class="btn tombol btn-success m-md-2"
                                     data-bs-toggle="modal"
                                     data-bs-target="#detailModal"
+                                    onclick="showDetail('${dataProduct.img}','${dataProduct.name}', '${dataProduct.price}')"
                                 >Lihat Detail</button>
     
                                 <a href="https://api.whatsapp.com/send?phone=6285646044393&text=Saya%20Pesan%20${dataProduct.name}%20jumlah%20satu%20harga%20Rp.${dataProduct.price}" class="btn tombol-order btn-success">Order</a>
@@ -270,6 +273,16 @@ function productMinuman() {
             swal.close();
         }
     })
+}
+
+function showDetail(img, productName, productPrice) {
+    Swal.fire({
+        imageUrl: img,
+        title: productName,
+        html: `<p>Harga: Rp.${productPrice}</p><p>Deskripsi: sabar.....</p>`,
+        confirmButtonText: 'OK'
+    });
+
 }
 
 // panggil fungsi clearform ketika baru di load
