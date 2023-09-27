@@ -67,6 +67,14 @@ $(document).ready(function () {
 });
 
 // fungsi untuk Contact Us
+
+// Function untuk membbersihkan isi comentar ketika di load
+function clearForm() {
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("comment").value = "";
+}
+
 // mengirimkan pesan ketika tombol submit di klik
 function sendMessage() {
     const name = document.getElementById("name").value;
@@ -76,26 +84,40 @@ function sendMessage() {
     if (name == "" || email == "" || comment == "") {
         swal.fire("Isi semua data terlebih dahulu");
     } else {
-        // nomer wa yang akan menerima pesan
-        const phoneNumber = "+6285646044393";
-
-        // isi pesannya mengambil dari name, email dan isi comentar
-        const message = `Name: ${name}%0AEmail: ${email}%0AComment: ${comment}`;
-
-        // membuat url ke whatsapp dan memuat isi pesannya
-        const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
-
-        // Redirect ke WhatsApp
-        window.location.href = whatsappURL;
+        function getCurrentDateTime() {
+            var now = new Date();
+            var year = now.getFullYear();
+            var month = String(now.getMonth() + 1).padStart(2, '0'); // Menambahkan leading zero jika diperlukan
+            var day = String(now.getDate()).padStart(2, '0');
+            var hours = String(now.getHours()).padStart(2, '0');
+            var minutes = String(now.getMinutes()).padStart(2, '0');
+            var seconds = String(now.getSeconds()).padStart(2, '0');
+          
+            return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}`;
+          }          
+        
+        const data = {
+            name: name,
+            email: email,
+            comment: comment,
+             created_at: getCurrentDateTime()
+        }
+        $.ajax({
+            url: "https://sheetdb.io/api/v1/spy3e14n4mke2",
+            type: "POST",
+            data: data,
+            success: function (res) {
+                swal.fire("Terimakasih", "Data berhasil di kirim");
+            },
+            error: function (err) {
+                swal.fire("Data tidak berhasil di kirim")
+            }
+        });
+        clearForm();
     }
 }
 
-// Function untuk membbersihkan isi comentar ketika di load
-function clearForm() {
-    document.getElementById("name").value = "";
-    document.getElementById("email").value = "";
-    document.getElementById("comment").value = "";
-}
+
 
 
 // panggil fungsi clearform ketika baru di load
