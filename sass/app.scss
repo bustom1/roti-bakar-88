@@ -14,3 +14,15 @@ p {
         font-weight: bold;
     }
 }
+
+.panah-container {
+    position: fixed;
+    bottom: 50px;
+    right: 15px;
+    a {
+        text-decoration: none;
+        color: black;
+        font-size: x-large;
+        text-shadow: 3px 3px 5px;
+    }
+}

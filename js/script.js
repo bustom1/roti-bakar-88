@@ -71,6 +71,24 @@ $(document).ready(function () {
         delay: 0.1,
         transition: "cubic-bezier(0,0,0,1)",
     });
+
+    // tombol up
+    function getRandomColor() {
+        var letters = "0123456789ABCDEF";
+        var color = "#";
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+    function randomWarna() {
+        var randomColor = getRandomColor();
+        $(".panah").css("color", randomColor);
+        setTimeout(randomWarna, 1000); // Ubah warna setiap 1 detik
+    }
+    $(document).ready(function () {
+        randomWarna(); // Mulai mengubah warna secara otomatis
+    });
 });
 
 // fungsi untuk Contact Us

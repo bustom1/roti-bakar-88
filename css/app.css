@@ -12,6 +12,19 @@ p {
 p span {
   color: #e94949;
   text-decoration-line: underline;
+  font-weight: bold;
+}
+
+.panah-container {
+  position: fixed;
+  bottom: 50px;
+  right: 15px;
+}
+.panah-container a {
+  text-decoration: none;
+  color: black;
+  font-size: x-large;
+  text-shadow: 3px 3px 5px;
 }
 
 /*# sourceMappingURL=app.css.map */
