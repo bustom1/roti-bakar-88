@@ -1,7 +1,30 @@
 .red-default-app {
-  color: #E94949;
+  color: #e94949;
 }
 
 .bg-testimoni {
   background-color: rgb(254, 251, 199);
-}/*# sourceMappingURL=app.css.map */
+}
+
+p {
+  text-align: justify;
+}
+p span {
+  color: #e94949;
+  text-decoration-line: underline;
+  font-weight: bold;
+}
+
+.panah-container {
+  position: fixed;
+  bottom: 50px;
+  right: 15px;
+}
+.panah-container a {
+  text-decoration: none;
+  color: black;
+  font-size: x-large;
+  text-shadow: 3px 3px 5px;
+}
+
+/*# sourceMappingURL=app.css.map */

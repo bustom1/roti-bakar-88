@@ -64,6 +64,31 @@ $(document).ready(function () {
             $(".modal-bs-backdrop").remove();
         });
     });
+
+    // parallax
+    var image = document.getElementsByClassName("img");
+    new simpleParallax(image, {
+        delay: 0.1,
+        transition: "cubic-bezier(0,0,0,1)",
+    });
+
+    // tombol up
+    function getRandomColor() {
+        var letters = "0123456789ABCDEF";
+        var color = "#";
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+    function randomWarna() {
+        var randomColor = getRandomColor();
+        $(".panah").css("color", randomColor);
+        setTimeout(randomWarna, 1000); // Ubah warna setiap 1 detik
+    }
+    $(document).ready(function () {
+        randomWarna(); // Mulai mengubah warna secara otomatis
+    });
 });
 
 // fungsi untuk Contact Us
@@ -87,21 +112,21 @@ function sendMessage() {
         function getCurrentDateTime() {
             var now = new Date();
             var year = now.getFullYear();
-            var month = String(now.getMonth() + 1).padStart(2, '0'); // Menambahkan leading zero jika diperlukan
-            var day = String(now.getDate()).padStart(2, '0');
-            var hours = String(now.getHours()).padStart(2, '0');
-            var minutes = String(now.getMinutes()).padStart(2, '0');
-            var seconds = String(now.getSeconds()).padStart(2, '0');
-          
+            var month = String(now.getMonth() + 1).padStart(2, "0"); // Menambahkan leading zero jika diperlukan
+            var day = String(now.getDate()).padStart(2, "0");
+            var hours = String(now.getHours()).padStart(2, "0");
+            var minutes = String(now.getMinutes()).padStart(2, "0");
+            var seconds = String(now.getSeconds()).padStart(2, "0");
+
             return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}`;
-          }          
-        
+        }
+
         const data = {
             name: name,
             email: email,
             comment: comment,
-             created_at: getCurrentDateTime()
-        }
+            created_at: getCurrentDateTime(),
+        };
         $.ajax({
             url: "https://sheetdb.io/api/v1/spy3e14n4mke2",
             type: "POST",
@@ -110,15 +135,175 @@ function sendMessage() {
                 swal.fire("Terimakasih", "Data berhasil di kirim");
             },
             error: function (err) {
-                swal.fire("Data tidak berhasil di kirim")
-            }
+                swal.fire("Data tidak berhasil di kirim");
+            },
         });
         clearForm();
     }
 }
 
+// fungsi untuk menanmpilkan semua data product
+function allProduct() {
+    swal.fire({
+        title: "Mencari Data...",
+        text: "Mohon tunggu !!!",
+        icon: "https://media.tenor.com/je-huTL1vwgAAAAi/loading-buffering.gif",
+    });
 
+    $("#isiProduct").empty();
 
+    $.ajax({
+        url: "https://sheetdb.io/api/v1/9gvkzok724476",
+        type: "GET",
+        success: function (res) {
+            if (res.length == 0) {
+                swal.fire("Data tidak di temukan");
+            } else {
+                for (let i = 0; i < res.length; i++) {
+                    const dataProduct = res[i];
+
+                    const isiProduct = ` <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
+                    <div class="card bg-danger p-2 justify-content-center align-items-center" style="box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.8)">
+                        <img src="${dataProduct.img}" class="card-img-top" alt="...">
+                        <div class="card-body text-light">
+                            <h5 class="card-title text-center">${dataProduct.name}</h5>
+                            <p class="card-text">Rp.${dataProduct.price}</p>
+                            <!-- Modal -->
+                            <div id="outputModal">
+                                <!-- isi Modal --></div>
+                            <!-- endModal -->
+                            <button
+                                type="button"
+                                class="btn tombol btn-success m-md-2"
+                                data-bs-toggle="modal"
+                                data-bs-target="#detailModal"
+                                onclick="showDetail('${dataProduct.img}','${dataProduct.name}', '${dataProduct.price}')"
+                            >Lihat Detail</button>
+
+                            <a href="https://api.whatsapp.com/send?phone=6285646044393&text=Saya%20Pesan%20${dataProduct.name}%20jumlah%20satu%20harga%20Rp.${dataProduct.price}" class="btn tombol-order btn-success">Order</a>
+                        </div>
+                    </div>
+                </div>`;
+
+                    $("#isiProduct").append(isiProduct);
+                }
+            }
+            swal.close();
+        },
+    });
+}
+
+function productMakanan() {
+    swal.fire({
+        title: "Mencari Data...",
+        text: "Mohon tunggu !!!",
+        icon: "https://media.tenor.com/je-huTL1vwgAAAAi/loading-buffering.gif",
+    });
+
+    $("#isiProduct").empty();
+
+    $.ajax({
+        url: "https://sheetdb.io/api/v1/9gvkzok724476",
+        type: "GET",
+        success: function (res) {
+            if (res.length == 0) {
+                swal.fire("Data tidak di temukan");
+            } else {
+                for (let i = 0; i < res.length; i++) {
+                    const dataProduct = res[i];
+                    if (dataProduct.kategori == "makanan") {
+                        const isiProduct = ` <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
+                        <div class="card bg-danger p-2 justify-content-center align-items-center" style="box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.8)">
+                            <img src="${dataProduct.img}" class="card-img-top" alt="...">
+                            <div class="card-body text-light">
+                                <h5 class="card-title text-center">${dataProduct.name}</h5>
+                                <p class="card-text">Rp.${dataProduct.price}</p>
+                                <!-- Modal -->
+                                <div id="outputModal">
+                                    <!-- isi Modal --></div>
+                                <!-- endModal -->
+                                <button
+                                    type="button"
+                                    class="btn tombol btn-success m-md-2"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#detailModal"
+                                    onclick="showDetail('${dataProduct.img}','${dataProduct.name}', '${dataProduct.price}')"
+                                >Lihat Detail</button>
+    
+                                <a href="https://api.whatsapp.com/send?phone=6285646044393&text=Saya%20Pesan%20${dataProduct.name}%20jumlah%20satu%20harga%20Rp.${dataProduct.price}" class="btn tombol-order btn-success">Order</a>
+                            </div>
+                        </div>
+                    </div>`;
+
+                        $("#isiProduct").append(isiProduct);
+                    }
+                }
+            }
+            swal.close();
+        },
+    });
+}
+
+function productMinuman() {
+    swal.fire({
+        title: "Mencari Data...",
+        text: "Mohon tunggu !!!",
+        icon: "https://media.tenor.com/je-huTL1vwgAAAAi/loading-buffering.gif",
+    });
+
+    $("#isiProduct").empty();
+
+    $.ajax({
+        url: "https://sheetdb.io/api/v1/9gvkzok724476",
+        type: "GET",
+        success: function (res) {
+            if (res.length == 0) {
+                swal.fire("Data tidak di temukan");
+            } else {
+                for (let i = 0; i < res.length; i++) {
+                    const dataProduct = res[i];
+                    if (dataProduct.kategori == "minuman") {
+                        const isiProduct = ` <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
+                        <div class="card bg-danger p-2 justify-content-center align-items-center" style="box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.8)">
+                            <img src="${dataProduct.img}" class="card-img-top" alt="...">
+                            <div class="card-body text-light">
+                                <h5 class="card-title text-center">${dataProduct.name}</h5>
+                                <p class="card-text">Rp.${dataProduct.price}</p>
+                                <!-- Modal -->
+                                <div id="outputModal">
+                                    <!-- isi Modal --></div>
+                                <!-- endModal -->
+                                <button
+                                    type="button"
+                                    class="btn tombol btn-success m-md-2"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#detailModal"
+                                    onclick="showDetail('${dataProduct.img}','${dataProduct.name}', '${dataProduct.price}')"
+                                >Lihat Detail</button>
+    
+                                <a href="https://api.whatsapp.com/send?phone=6285646044393&text=Saya%20Pesan%20${dataProduct.name}%20jumlah%20satu%20harga%20Rp.${dataProduct.price}" class="btn tombol-order btn-success">Order</a>
+                            </div>
+                        </div>
+                    </div>`;
+
+                        $("#isiProduct").append(isiProduct);
+                    }
+                }
+            }
+            swal.close();
+        },
+    });
+}
+
+function showDetail(img, productName, productPrice) {
+    Swal.fire({
+        imageUrl: img,
+        title: productName,
+        html: `<p>Harga: Rp.${productPrice}</p><p>Deskripsi: sabar.....</p>`,
+        confirmButtonText: "OK",
+    });
+}
 
 // panggil fungsi clearform ketika baru di load
 window.onload = clearForm;
+window.onload = allProduct;
