@@ -1,5 +1,7 @@
+$color-red-def: #e94949;
+
 .red-default-app {
-    color: #e94949;
+    color: $color-red-def;
 }
 
 .bg-testimoni {
@@ -9,7 +11,7 @@
 p {
     text-align: justify;
     span {
-        color: #e94949;
+        color: $color-red-def;
         text-decoration-line: underline;
         font-weight: bold;
     }
@@ -26,3 +28,4 @@ p {
         text-shadow: 3px 3px 5px;
     }
 }
+
