@@ -1,0 +1,20 @@
+@use 'mixin';
+
+$second-color: rgb(254, 251, 199);
+
+#menu {
+    background-color: $second-color;
+    .carousel-inner {
+        border: none;
+        margin: auto;
+        .card {
+            @include mixin.testim-card();
+        }
+    }
+    a {
+        @include mixin.hover-prev-next();
+    }
+    p {
+        @include mixin.testim-p()
+    }
+}
