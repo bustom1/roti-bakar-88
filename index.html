@@ -87,7 +87,9 @@
         <!-- Start Product -->
         <section class="product_section">
             <div class="container">
-                <div class="text-center mb-3 text-start fw-bold fs-3"><h1>Produk Kami</h1></div>
+                <div class="text-center mb-3 text-start fw-bold fs-3">
+                    <h1>Produk Kami</h1>
+                </div>
                 <ul class="nav justify-content-center">
                     <li class="nav-item">
                         <button class="btn bg-body m-1 mb-3">
@@ -123,14 +125,20 @@
                 </div>
                 <div class="col-md-6 col-sm-12 about-text">
                     <p>Kualitas adalah segalanya bagi kami. Kami menggunakan bahan-bahan berkualitas terbaik dalam setiap roti bakar yang disajikan. Dengan rasa yang lezat dan tekstur yang lembut, setiap gigitan adalah pengalaman yang luar biasa.</p>
-                    <p><span>Roti Bakar 88</span> bukan hanya tentang makanan lezat, tapi juga tentang menciptakan momen berharga bersama teman dan keluarga. Kami menyediakan tempat hangout yang nyaman dan santai di mana Anda dapat bersantai sambil menikmati makanan favorit Anda.</p>
-                    <p>Komitmen kami, memberikan pengalaman kuliner yang tak terlupakan kepada setiap pelanggan. Jadilah bagian dari perjalanan kami dan nikmati kelezatan roti bakar yang tak ada duanya di <span>Roti Bakar 88!</span></p>
+                    <p>
+                        <span>Roti Bakar 88</span>
+                        bukan hanya tentang makanan lezat, tapi juga tentang menciptakan momen berharga bersama teman dan keluarga. Kami menyediakan tempat hangout yang nyaman dan santai di mana Anda dapat bersantai sambil menikmati makanan favorit Anda.
+                    </p>
+                    <p>
+                        Komitmen kami, memberikan pengalaman kuliner yang tak terlupakan kepada setiap pelanggan. Jadilah bagian dari perjalanan kami dan nikmati kelezatan roti bakar yang tak ada duanya di
+                        <span>Roti Bakar 88!</span>
+                    </p>
                 </div>
             </div>
         </div>
         <!--  End About-->
         <!-- Start FAQ -->
-        <div class="container">
+        <div class="container faq">
             <div class="container-fluid">
                 <div class="text-center fw-bold fs-2 pt-2">FAQ</div>
                 <div class="row justify-content-evenly">
@@ -224,37 +232,55 @@
         <section id="menu">
             <div class="py-5 my-1">
                 <h2 class="fw-bold menu text-center">Testimoni</h2>
-                <div class="container">
+                <div class="container-fluid">
                     <div class="row">
-                        <div class="col-md-4 mb-4">
-                            <div class="card bg-testimoni">
-                                <div class="card-body">
-                                    <p class="card-text text-center">"Roti Bakar 88 benar-benar enak! Saya suka rasa dan teksturnya yang lembut."</p>
-                                    <p class="fw-bold text-center">Ardan Hadi</p>
+                        <div class="col-md-12">
+                            <div id="testimoniCarousel" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner justify-content-center">
+                                    <div class="carousel-item active">
+                                        <div class="card d-flex justify-content-center align-items-center">
+                                            <div class="card-body">
+                                                <p class="card-text text-center">"Roti Bakar 88 benar-benar enak! Saya suka rasa dan teksturnya yang lembut."</p>
+                                                <p class="fw-bold text-center">Ardan Hadi</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <div class="card d-flex justify-content-center align-items-center">
+                                            <div class="card-body">
+                                                <p class="card-text text-center">"Saya sudah menjadi pelanggan setia Roti Bakar 88 selama 3 tahun. Kualitasnya selalu konsisten."</p>
+                                                <p class="fw-bold text-center">Auliana</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="carousel-item">
+                                        <div class="card d-flex justify-content-center align-items-center">
+                                            <div class="card-body">
+                                                <p class="card-text text-center">"Terima kasih Roti Bakar 88, rotinya selalu enak dan pelayanannya ramah!"</p>
+                                                <p class="fw-bold text-center">Michael Tea</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="card bg-testimoni">
-                                <div class="card-body">
-                                    <p class="card-text text-center">"Saya sudah menjadi pelanggan setia Roti Bakar 88 selama 3 tahun. Kualitasnya selalu konsisten."</p>
-                                    <p class="fw-bold text-center">Auliana</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="card bg-testimoni">
-                                <div class="card-body">
-                                    <p class="card-text text-center">"Terima kasih Roti Bakar 88, rotinya selalu enak dan pelayanannya ramah!"</p>
-                                    <p class="fw-bold text-center">Michael Tea</p>
-                                </div>
+                                <a class="carousel-control-prev" href="#testimoniCarousel" role="button" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon prev" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#testimoniCarousel" role="button" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon next" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
         <!-- End Testimoni -->
+
         <!-- Start Contact -->
         <div class="contact pt-4 mb-5" id="contact">
             <div class="container">
@@ -360,7 +386,9 @@
             <!-- Grid container -->
             <!-- tombbol up -->
             <div class="panah-container">
-                <a href="" class="panah"><i class="fa-solid fa-angles-up fa-beat-fade"></i></a>
+                <a href="" class="panah">
+                    <i class="fa-solid fa-angles-up fa-beat-fade"></i>
+                </a>
             </div>
             <!-- Copyright -->
             <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
@@ -370,7 +398,6 @@
             <!-- Copyright -->
         </footer>
         <!-- End Contact -->
-
         <script type="text/javascript" src="js/script.js"></script>
     </body>
 </html>
