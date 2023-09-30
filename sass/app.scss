@@ -1,11 +1,36 @@
 $color-red-def: #e94949;
+$second-color: rgb(254, 251, 199);
 
 .red-default-app {
     color: $color-red-def;
 }
-
-.bg-testimoni {
-    background-color: rgb(254, 251, 199);
+#menu {
+    background-color: $second-color;
+    .carousel-inner {
+        border: none;
+        margin: auto;
+        .card {
+            box-shadow: 3px 3px 9px $color-red-def;
+            border-radius: 0px 25px 25px 25px;
+            margin: 10px;
+            background-color: None;
+            max-width: 100%;
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+    }
+    a {
+        .prev:hover {
+            background-color: $color-red-def;
+            border-radius: 100px;
+            opacity: 50%;
+        }
+        .next:hover {
+            background-color: $color-red-def;
+            border-radius: 100px;
+            opacity: 50%;
+        }
+    }
 }
 
 p {
@@ -28,4 +53,3 @@ p {
         text-shadow: 3px 3px 5px;
     }
 }
-

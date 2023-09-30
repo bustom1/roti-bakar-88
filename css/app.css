@@ -2,8 +2,31 @@
   color: #e94949;
 }
 
-.bg-testimoni {
+#menu {
   background-color: rgb(254, 251, 199);
+}
+#menu .carousel-inner {
+  border: none;
+  margin: auto;
+}
+#menu .carousel-inner .card {
+  box-shadow: 3px 3px 9px #e94949;
+  border-radius: 0px 25px 25px 25px;
+  margin: 10px;
+  background-color: None;
+  max-width: 100%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+#menu a .prev:hover {
+  background-color: #e94949;
+  border-radius: 100px;
+  opacity: 50%;
+}
+#menu a .next:hover {
+  background-color: #e94949;
+  border-radius: 100px;
+  opacity: 50%;
 }
 
 p {
@@ -25,4 +48,6 @@ p span {
   color: black;
   font-size: x-large;
   text-shadow: 3px 3px 5px;
-}/*# sourceMappingURL=app.css.map */
+}
+
+/*# sourceMappingURL=app.css.map */
