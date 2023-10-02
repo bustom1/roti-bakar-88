@@ -3,7 +3,8 @@
 $second-color: rgb(254, 251, 199);
 
 #menu {
-    background-color: $second-color;
+    // fungsi darken color untuk agak gelap
+    background-color: darken($color: #fefbc7, $amount: 10);
     .carousel-inner {
         border: none;
         margin: auto;

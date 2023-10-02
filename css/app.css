@@ -1,12 +1,12 @@
 #menu {
-  background-color: rgb(254, 251, 199);
+  background-color: #fdf795;
 }
 #menu .carousel-inner {
   border: none;
   margin: auto;
 }
 #menu .carousel-inner .card {
-  box-shadow: 3px 3px 9px #e94949;
+  box-shadow: 3px 3px 9px #ef7777;
   border-radius: 0px 25px 25px 25px;
   margin: 10px;
   background-color: None;
