@@ -23,7 +23,8 @@ $color-red-def: #e94949;
 }
 
 @mixin testim-card{
-    box-shadow: 3px 3px 9px $color-red-def;
+    // fungsi lighten untuk lebih terang
+    box-shadow: 3px 3px 9px lighten($color: #e94949, $amount: 10);
             border-radius: 0px 25px 25px 25px;
             margin: 10px;
             background-color: None;
@@ -31,3 +32,4 @@ $color-red-def: #e94949;
             margin-left: 20%;
             margin-right: 20%;
 }
+
