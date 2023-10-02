@@ -9,7 +9,6 @@
   box-shadow: 3px 3px 9px #ef7777;
   border-radius: 0px 25px 25px 25px;
   margin: 10px;
-  background-color: None;
   max-width: 100%;
   margin-left: 20%;
   margin-right: 20%;
@@ -56,6 +55,16 @@
   box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
   border-radius: 50%;
   padding: 5px;
+}
+
+#menu .carousel-inner .card:nth-child(1) {
+  background-color: #72ce64;
+}
+#menu .carousel-inner .card:nth-child(2) {
+  background-color: #64cea6;
+}
+#menu .carousel-inner .card:nth-child(3) {
+  background-color: #64a7ce;
 }
 
 /*# sourceMappingURL=app.css.map */
