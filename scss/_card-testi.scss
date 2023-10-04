@@ -1,12 +1,9 @@
-$color: #c1ce64;
-#menu {
-    .carousel-inner {
-        .card {
-            @for $i from 1 to 4 {
-                &:nth-child(#{$i}) {
-                    background-color: adjust-hue($color, $i * 45deg);
-                }
-            }
+$color: #fdf795;
+
+.carousel-item {
+    @for $i from 1 to 4 {
+        &:nth-child(#{$i}) .card {
+            background-color: adjust-hue($color, $i * 50deg);
         }
     }
 }
