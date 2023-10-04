@@ -66,5 +66,14 @@
 .carousel-item:nth-child(3) .card {
   background-color: #95cffd;
 }
+.carousel-item:nth-child(4) .card {
+  background-color: #ffaa69;
+}
+.carousel-item:nth-child(5) .card {
+  background-color: #52e2be;
+}
+.carousel-item:nth-child(6) .card {
+  background-color: #d0de62;
+}
 
 /*# sourceMappingURL=app.css.map */
