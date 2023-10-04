@@ -1,0 +1,21 @@
+@use 'mixin';
+
+$second-color: rgb(254, 251, 199);
+
+#menu {
+    // fungsi darken color untuk agak gelap
+    background-color: darken($color: #fefbc7, $amount: 10);
+    .carousel-inner {
+        border: none;
+        margin: auto;
+        .card {
+            @include mixin.testim-card();
+        }
+    }
+    a {
+        @include mixin.hover-prev-next();
+    }
+    p {
+        @include mixin.testim-p()
+    }
+}
