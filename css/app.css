@@ -57,14 +57,14 @@
   padding: 5px;
 }
 
-#menu .carousel-inner .card:nth-child(1) {
-  background-color: #72ce64;
+.carousel-item:nth-child(1) .card {
+  background-color: #acfd95;
 }
-#menu .carousel-inner .card:nth-child(2) {
-  background-color: #64cea6;
+.carousel-item:nth-child(2) .card {
+  background-color: #95fdd4;
 }
-#menu .carousel-inner .card:nth-child(3) {
-  background-color: #64a7ce;
+.carousel-item:nth-child(3) .card {
+  background-color: #95cffd;
 }
 
 /*# sourceMappingURL=app.css.map */
