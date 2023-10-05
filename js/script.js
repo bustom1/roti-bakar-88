@@ -174,7 +174,7 @@ function allProduct() {
                             <!-- endModal -->
                             <button
                                 type="button"
-                                class="btn tombol btn-success m-md-2"
+                                class="btn tombol btn-cyn m-md-2"
                                 data-bs-toggle="modal"
                                 data-bs-target="#detailModal"
                                 onclick="showDetail('${dataProduct.img}','${dataProduct.name}', '${dataProduct.price}')"
