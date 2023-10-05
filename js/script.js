@@ -299,7 +299,7 @@ function showDetail(img, productName, productPrice, deskripsi, stok) {
     Swal.fire({
         imageUrl: img,
         title: productName,
-        html: `<p>Harga: Rp.${productPrice}</p><p>Deskripsi: ${deskripsi}</p> <p>Stok : ${stok}</p>`,
+        html: `<p><b>Harga: </b>Rp.${productPrice}</p><p><b>Deskripsi</b></p><p>${deskripsi}</p><br><p><b>Stok :</b> ${stok}</p>`,
         confirmButtonText: "OK",
     });
 }
