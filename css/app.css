@@ -67,4 +67,47 @@
   background-color: #95cffd;
 }
 
+li .a-tab {
+  font-weight: bold;
+  color: #e94949;
+}
+li .a-tab:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
+  border: 1px solid;
+  border-radius: 20px;
+}
+
+.card-img-top {
+  box-shadow: 1px 1px 8px;
+}
+.card-img-top:hover {
+  transform: scale(1.09);
+  transition: 1s;
+  border-radius: 10px;
+  border: 2px solid;
+}
+
+.tombol,
+.tombol-order {
+  background-color: rgb(254, 251, 199);
+  box-shadow: 3px 3px 8px;
+}
+.tombol:hover,
+.tombol-order:hover {
+  background-color: #e94949;
+  color: rgb(254, 251, 199);
+  border: 1px solid;
+}
+
+.tombol-order {
+  background-color: rgb(59, 255, 59);
+  box-shadow: 3px 3px 8px;
+}
+.tombol-order:hover {
+  background-color: #e94949;
+  color: rgb(254, 251, 199);
+  border: 1px solid;
+}
+
 /*# sourceMappingURL=app.css.map */

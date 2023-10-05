@@ -1,4 +1,4 @@
-@use 'mixin';
+@use "mixin";
 
 $second-color: rgb(254, 251, 199);
 
@@ -16,6 +16,6 @@ $second-color: rgb(254, 251, 199);
         @include mixin.hover-prev-next();
     }
     p {
-        @include mixin.testim-p()
+        @include mixin.testim-p();
     }
 }
