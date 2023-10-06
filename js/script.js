@@ -1,36 +1,4 @@
 $(document).ready(function () {
-    //section product
-    var bg_produk = "#FEFBC7";
-    $(".product_section").css({
-        "background-color": bg_produk,
-        margin: "5px 0px 0px 0px",
-        padding: "20px 0px 15px 0px",
-    });
-    $(".tombol").css({
-        "background-color": bg_produk,
-        color: "black",
-        "border-radius": "15px",
-    });
-    $(".tombol, .tombol-order").css({
-        color: "black",
-        "border-radius": "15px",
-        "margin-left": "10px",
-        "box-shadow": "3px 3px 9px black",
-    });
-    $(".tombol, .tombol-order, img, .a-tab").hover(
-        function () {
-            $(this).css({
-                transform: "scale(1.1)",
-                transition: "0.2s",
-            });
-        },
-        function () {
-            $(this).css({
-                transform: "scale(1)",
-            });
-        }
-    );
-
     // show modal pop up
     $(".tombol").click(function () {
         var modalContent = `
@@ -174,13 +142,15 @@ function allProduct() {
                             <!-- endModal -->
                             <button
                                 type="button"
-                                class="btn tombol btn-success m-md-2"
+                                class="btn tombol 
+                                btn-cyn m-md-2"
+
                                 data-bs-toggle="modal"
                                 data-bs-target="#detailModal"
-                                onclick="showDetail('${dataProduct.img}','${dataProduct.name}', '${dataProduct.price}')"
+                                onclick="showDetail('${dataProduct.img}','${dataProduct.name}', '${dataProduct.price}',  '${dataProduct.deskripsi}', '${dataProduct.stok}')"
                             >Lihat Detail</button>
 
-                            <a href="https://api.whatsapp.com/send?phone=6285646044393&text=Saya%20Pesan%20${dataProduct.name}%20jumlah%20satu%20harga%20Rp.${dataProduct.price}" class="btn tombol-order btn-success">Order</a>
+                            <a href="https://api.whatsapp.com/send?phone=6285646044393&text=Saya%20Pesan%20${dataProduct.name}%20jumlah%20satu%20harga%20Rp.${dataProduct.price}" class="btn tombol-order ">Order <i class="fa-brands fa-whatsapp"></i> </a>
                         </div>
                     </div>
                 </div>`;
@@ -227,7 +197,7 @@ function productMakanan() {
                                     class="btn tombol btn-success m-md-2"
                                     data-bs-toggle="modal"
                                     data-bs-target="#detailModal"
-                                    onclick="showDetail('${dataProduct.img}','${dataProduct.name}', '${dataProduct.price}')"
+                                    onclick="showDetail('${dataProduct.img}','${dataProduct.name}', '${dataProduct.price}', '${dataProduct.deskripsi}', '${dataProduct.stok}')"
                                 >Lihat Detail</button>
     
                                 <a href="https://api.whatsapp.com/send?phone=6285646044393&text=Saya%20Pesan%20${dataProduct.name}%20jumlah%20satu%20harga%20Rp.${dataProduct.price}" class="btn tombol-order btn-success">Order</a>
@@ -278,7 +248,7 @@ function productMinuman() {
                                     class="btn tombol btn-success m-md-2"
                                     data-bs-toggle="modal"
                                     data-bs-target="#detailModal"
-                                    onclick="showDetail('${dataProduct.img}','${dataProduct.name}', '${dataProduct.price}')"
+                                    onclick="showDetail('${dataProduct.img}','${dataProduct.name}', '${dataProduct.price}', '${dataProduct.deskripsi}', '${dataProduct.stok}')"
                                 >Lihat Detail</button>
     
                                 <a href="https://api.whatsapp.com/send?phone=6285646044393&text=Saya%20Pesan%20${dataProduct.name}%20jumlah%20satu%20harga%20Rp.${dataProduct.price}" class="btn tombol-order btn-success">Order</a>
@@ -295,11 +265,11 @@ function productMinuman() {
     });
 }
 
-function showDetail(img, productName, productPrice) {
+function showDetail(img, productName, productPrice, deskripsi, stok) {
     Swal.fire({
         imageUrl: img,
         title: productName,
-        html: `<p>Harga: Rp.${productPrice}</p><p>Deskripsi: sabar.....</p>`,
+        html: `<p><b>Harga: </b>Rp.${productPrice}</p><p><b>Deskripsi</b></p><p>${deskripsi}</p><br><p><b>Stok :</b> ${stok}</p>`,
         confirmButtonText: "OK",
     });
 }
