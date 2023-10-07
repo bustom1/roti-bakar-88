@@ -304,6 +304,8 @@ function showDetail(img, productName, productPrice) {
     });
 }
 
+
+
 // panggil fungsi clearform ketika baru di load
 window.onload = clearForm;
 window.onload = allProduct;
