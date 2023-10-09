@@ -278,8 +278,35 @@ function showDetail(img, productName, productPrice, deskripsi, stok) {
     });
 }
 
+function dataTestimoni(){
+    $.ajax({
+        url: "https://sheetdb.io/api/v1/spy3e14n4mke2",
+        type: "GET",
+        success: function(res){
+            
+            for (let i = 0; i < res.length; i++) {
+                const data = res[i];
+                // console.log(data);
+                
+                const dataTesti = `<div class="carousel-item ">
+                <div class="card d-flex justify-content-center align-items-center">
+                <div class="card-body">
+                <p class="card-text text-center">${data.comment}</p>
+                <p class="fw-bold text-center">${data.name}</p>
+                </div>
+                </div>
+                </div>`
+
+                $("#dataTesti").append(dataTesti);
+                
+            }
+        }
+
+    })
+}
 
 
 // panggil fungsi clearform ketika baru di load
 window.onload = clearForm;
 window.onload = allProduct;
+window.onload = dataTestimoni;
