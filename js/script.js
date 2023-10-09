@@ -96,7 +96,7 @@ function sendMessage() {
             created_at: getCurrentDateTime(),
         };
         $.ajax({
-            url: "https://sheetdb.io/api/v1/spy3e14n4mke2",
+            url: "https://sheetdb.io/api/v1/k92aevs17oudu",
             type: "POST",
             data: data,
             success: function (res) {
@@ -121,7 +121,7 @@ function allProduct() {
     $("#isiProduct").empty();
 
     $.ajax({
-        url: "https://sheetdb.io/api/v1/9gvkzok724476",
+        url: "https://sheetdb.io/api/v1/65tjhvkctznmh",
         type: "GET",
         success: function (res) {
             if (res.length == 0) {
@@ -173,7 +173,7 @@ function productMakanan() {
     $("#isiProduct").empty();
 
     $.ajax({
-        url: "https://sheetdb.io/api/v1/9gvkzok724476",
+        url: "https://sheetdb.io/api/v1/65tjhvkctznmh",
         type: "GET",
         success: function (res) {
             if (res.length == 0) {
@@ -226,7 +226,7 @@ function productMinuman() {
     $("#isiProduct").empty();
 
     $.ajax({
-        url: "https://sheetdb.io/api/v1/9gvkzok724476",
+        url: "https://sheetdb.io/api/v1/65tjhvkctznmh",
         type: "GET",
         success: function (res) {
             if (res.length == 0) {
