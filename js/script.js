@@ -110,6 +110,35 @@ function sendMessage() {
     }
 }
 
+
+
+function dataTestimoni(){
+    $.ajax({
+        url: "https://sheetdb.io/api/v1/spy3e14n4mke2",
+        type: "GET",
+        success: function(res){
+            
+            for (let i = 0; i < res.length; i++) {
+                const data = res[i];
+                // console.log(data);
+                
+                const dataTesti = `<div class="carousel-item ">
+                <div class="card d-flex justify-content-center align-items-center">
+                <div class="card-body">
+                <p class="card-text text-center">${data.comment}</p>
+                <p class="fw-bold text-center">${data.name}</p>
+                </div>
+                </div>
+                </div>`
+
+                $("#dataTesti").append(dataTesti);
+                
+            }
+        }
+
+    })
+}
+
 // fungsi untuk menanmpilkan semua data product
 function allProduct() {
     swal.fire({
@@ -130,32 +159,33 @@ function allProduct() {
                 for (let i = 0; i < res.length; i++) {
                     const dataProduct = res[i];
 
-                    const isiProduct = ` <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
-                    <div class="card bg-danger p-2 justify-content-center align-items-center" style="box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.8)">
-                        <img src="${dataProduct.img}" class="card-img-top" alt="...">
-                        <div class="card-body text-light">
-                            <h5 class="card-title text-center">${dataProduct.name}</h5>
-                            <p class="card-text">Rp.${dataProduct.price}</p>
-                            <!-- Modal -->
-                            <div id="outputModal">
-                                <!-- isi Modal --></div>
-                            <!-- endModal -->
-                            <button
-                                type="button"
-                                class="btn tombol 
-                                btn-cyn m-md-2"
+                    console.log(dataProduct.name);
+                //     const isiProduct = ` <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
+                //     <div class="card bg-danger p-2 justify-content-center align-items-center" style="box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.8)">
+                //         <img src="${dataProduct.img}" class="card-img-top" alt="...">
+                //         <div class="card-body text-light">
+                //             <h5 class="card-title text-center">${dataProduct.name}</h5>
+                //             <p class="card-text">Rp.${dataProduct.price}</p>
+                //             <!-- Modal -->
+                //             <div id="outputModal">
+                //                 <!-- isi Modal --></div>
+                //             <!-- endModal -->
+                //             <button
+                //                 type="button"
+                //                 class="btn tombol 
+                //                 btn-cyn m-md-2"
 
-                                data-bs-toggle="modal"
-                                data-bs-target="#detailModal"
-                                onclick="showDetail('${dataProduct.img}','${dataProduct.name}', '${dataProduct.price}',  '${dataProduct.deskripsi}', '${dataProduct.stok}')"
-                            >Lihat Detail</button>
+                //                 data-bs-toggle="modal"
+                //                 data-bs-target="#detailModal"
+                //                 onclick="showDetail('${dataProduct.img}','${dataProduct.name}', '${dataProduct.price}',  '${dataProduct.deskripsi}', '${dataProduct.stok}')"
+                //             >Lihat Detail</button>
 
-                            <a href="https://api.whatsapp.com/send?phone=6285646044393&text=Saya%20Pesan%20${dataProduct.name}%20jumlah%20satu%20harga%20Rp.${dataProduct.price}" class="btn tombol-order ">Order <i class="fa-brands fa-whatsapp"></i> </a>
-                        </div>
-                    </div>
-                </div>`;
+                //             <a href="https://api.whatsapp.com/send?phone=6285646044393&text=Saya%20Pesan%20${dataProduct.name}%20jumlah%20satu%20harga%20Rp.${dataProduct.price}" class="btn tombol-order ">Order <i class="fa-brands fa-whatsapp"></i> </a>
+                //         </div>
+                //     </div>
+                // </div>`;
 
-                    $("#isiProduct").append(isiProduct);
+                    // $("#isiProduct").append(isiProduct);
                 }
             }
             swal.close();
@@ -283,3 +313,4 @@ function showDetail(img, productName, productPrice, deskripsi, stok) {
 // panggil fungsi clearform ketika baru di load
 window.onload = clearForm;
 window.onload = allProduct;
+window.onload = dataTestimoni;
