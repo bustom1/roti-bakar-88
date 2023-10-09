@@ -1,0 +1,19 @@
+// pengkondisian menggunakan if
+
+@mixin brand_pict($size, $gambar: false) {
+    width: $size;
+    height: $size;
+
+    @if $gambar {
+        box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+        border-radius: 50%;
+    }
+}
+
+.nav-img {
+    @include brand_pict(50px, $gambar: false);
+}
+.img-footer {
+    @include brand_pict(150px, $gambar: true);
+    padding: 5px;
+}

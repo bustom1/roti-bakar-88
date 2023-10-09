@@ -1,0 +1,44 @@
+$color-red-def: #e94949;
+$second-color: rgb(254, 251, 199);
+$thrid-color: rgb(59, 255, 59);
+
+li {
+    .a-tab {
+        font-weight: bold;
+        color: $color-red-def;
+        &:hover {
+            transform: scale(1.1);
+            transition: 0.2s;
+            border: 1px solid;
+            border-radius: 20px;
+        }
+    }
+}
+.card-img-top {
+    box-shadow: 1px 1px 8px;
+    &:hover {
+        transform: scale(1.09);
+        transition: 1s;
+        border-radius: 10px;
+        border: 2px solid;
+    }
+}
+.tombol,
+.tombol-order {
+    background-color: $second-color;
+    box-shadow: 3px 3px 8px;
+    &:hover {
+        background-color: $color-red-def;
+        color: $second-color;
+        border: 1px solid;
+    }
+}
+.tombol-order {
+    background-color: $thrid-color;
+    box-shadow: 3px 3px 8px;
+    &:hover {
+        background-color: $color-red-def;
+        color: $second-color;
+        border: 1px solid;
+    }
+}
