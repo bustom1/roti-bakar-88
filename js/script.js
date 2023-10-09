@@ -194,13 +194,15 @@ function productMakanan() {
                                 <!-- endModal -->
                                 <button
                                     type="button"
-                                    class="btn tombol btn-success m-md-2"
+                                    class="btn tombol 
+                                    btn-cyn m-md-2"
+    
                                     data-bs-toggle="modal"
                                     data-bs-target="#detailModal"
-                                    onclick="showDetail('${dataProduct.img}','${dataProduct.name}', '${dataProduct.price}', '${dataProduct.deskripsi}', '${dataProduct.stok}')"
+                                    onclick="showDetail('${dataProduct.img}','${dataProduct.name}', '${dataProduct.price}',  '${dataProduct.deskripsi}', '${dataProduct.stok}')"
                                 >Lihat Detail</button>
     
-                                <a href="https://api.whatsapp.com/send?phone=6285646044393&text=Saya%20Pesan%20${dataProduct.name}%20jumlah%20satu%20harga%20Rp.${dataProduct.price}" class="btn tombol-order btn-success">Order</a>
+                                <a href="https://api.whatsapp.com/send?phone=6285646044393&text=Saya%20Pesan%20${dataProduct.name}%20jumlah%20satu%20harga%20Rp.${dataProduct.price}" class="btn tombol-order ">Order <i class="fa-brands fa-whatsapp"></i> </a>
                             </div>
                         </div>
                     </div>`;
@@ -245,13 +247,15 @@ function productMinuman() {
                                 <!-- endModal -->
                                 <button
                                     type="button"
-                                    class="btn tombol btn-success m-md-2"
+                                    class="btn tombol 
+                                    btn-cyn m-md-2"
+    
                                     data-bs-toggle="modal"
                                     data-bs-target="#detailModal"
-                                    onclick="showDetail('${dataProduct.img}','${dataProduct.name}', '${dataProduct.price}', '${dataProduct.deskripsi}', '${dataProduct.stok}')"
+                                    onclick="showDetail('${dataProduct.img}','${dataProduct.name}', '${dataProduct.price}',  '${dataProduct.deskripsi}', '${dataProduct.stok}')"
                                 >Lihat Detail</button>
     
-                                <a href="https://api.whatsapp.com/send?phone=6285646044393&text=Saya%20Pesan%20${dataProduct.name}%20jumlah%20satu%20harga%20Rp.${dataProduct.price}" class="btn tombol-order btn-success">Order</a>
+                                <a href="https://api.whatsapp.com/send?phone=6285646044393&text=Saya%20Pesan%20${dataProduct.name}%20jumlah%20satu%20harga%20Rp.${dataProduct.price}" class="btn tombol-order ">Order <i class="fa-brands fa-whatsapp"></i> </a>
                             </div>
                         </div>
                     </div>`;
@@ -273,6 +277,8 @@ function showDetail(img, productName, productPrice, deskripsi, stok) {
         confirmButtonText: "OK",
     });
 }
+
+
 
 // panggil fungsi clearform ketika baru di load
 window.onload = clearForm;
