@@ -43,14 +43,4 @@
   color: black;
   font-size: x-large;
   text-shadow: 3px 3px 5px;
-}
-
-#faq {
-  background-color: #e5e3b9;
-}
-#faq .accordion-item {
-  background-color: #edea9d;
-}
-#faq .accordion-item button {
-  background-color: #edea9d;
 }/*# sourceMappingURL=app.css.map */
