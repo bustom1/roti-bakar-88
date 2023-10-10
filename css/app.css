@@ -57,16 +57,6 @@
   padding: 5px;
 }
 
-.carousel-item:nth-child(1) .card {
-  background-color: #acfd95;
-}
-.carousel-item:nth-child(2) .card {
-  background-color: #95fdd4;
-}
-.carousel-item:nth-child(3) .card {
-  background-color: #95cffd;
-}
-
 li .a-tab {
   font-weight: bold;
   color: #e94949;
@@ -93,25 +83,8 @@ li .a-tab:hover {
   background-color: rgb(254, 251, 199);
   box-shadow: 3px 3px 8px;
 }
-.tombol:hover,
-.tombol-order:hover {
-  background-color: #e94949;
-  color: rgb(254, 251, 199);
-  border: 1px solid;
-}
 
 .tombol-order {
   background-color: rgb(59, 255, 59);
   box-shadow: 3px 3px 8px;
-}
-.tombol-order:hover {
-  background-color: #e94949;
-  color: rgb(254, 251, 199);
-  border: 1px solid;
-}
-
-.btn-cyn{
-  background-color:#fdf795;
-}
-
-/*# sourceMappingURL=app.css.map */
+}/*# sourceMappingURL=app.css.map */

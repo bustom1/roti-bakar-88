@@ -1,4 +1,35 @@
 $(document).ready(function () {
+    //section product
+    var bg_produk = "#FEFBC7";
+    $(".product_section").css({
+        "background-color": bg_produk,
+        margin: "5px 0px 0px 0px",
+        padding: "20px 0px 15px 0px",
+    });
+    $(".tombol").css({
+        "background-color": bg_produk,
+        color: "black",
+        "border-radius": "15px",
+    });
+    $(".tombol, .tombol-order").css({
+        color: "black",
+        "border-radius": "15px",
+        "margin-left": "10px",
+        "box-shadow": "3px 3px 9px black",
+    });
+    $(".tombol, .tombol-order, img, .a-tab").hover(
+        function () {
+            $(this).css({
+                transform: "scale(1.1)",
+                transition: "0.2s",
+            });
+        },
+        function () {
+            $(this).css({
+                transform: "scale(1)",
+            });
+        }
+    );
     // show modal pop up
     $(".tombol").click(function () {
         var modalContent = `
@@ -22,7 +53,6 @@ $(document).ready(function () {
         `;
         $("#outputModal").append(modalContent);
         $("#outputModal, .modal").modal("show");
-
         $("#detailModal").on("hidden.bs.modal", function () {
             // Sembunyikan modal
             $(this).modal("hide");
@@ -32,14 +62,12 @@ $(document).ready(function () {
             $(".modal-bs-backdrop").remove();
         });
     });
-
     // parallax
     var image = document.getElementsByClassName("img");
     new simpleParallax(image, {
         delay: 0.1,
         transition: "cubic-bezier(0,0,0,1)",
     });
-
     // tombol up
     function getRandomColor() {
         var letters = "0123456789ABCDEF";
@@ -54,12 +82,8 @@ $(document).ready(function () {
         $(".panah").css("color", randomColor);
         setTimeout(randomWarna, 1000); // Ubah warna setiap 1 detik
     }
-    $(document).ready(function () {
-        randomWarna(); // Mulai mengubah warna secara otomatis
-    });
-});
 
-// fungsi untuk Contact Us
+});
 
 // Function untuk membbersihkan isi comentar ketika di load
 function clearForm() {
@@ -96,7 +120,7 @@ function sendMessage() {
             created_at: getCurrentDateTime(),
         };
         $.ajax({
-            url: "https://sheetdb.io/api/v1/spy3e14n4mke2",
+            url: "https://sheetdb.io/api/v1/k92aevs17oudu",
             type: "POST",
             data: data,
             success: function (res) {
@@ -110,35 +134,6 @@ function sendMessage() {
     }
 }
 
-
-
-function dataTestimoni(){
-    $.ajax({
-        url: "https://sheetdb.io/api/v1/spy3e14n4mke2",
-        type: "GET",
-        success: function(res){
-            
-            for (let i = 0; i < res.length; i++) {
-                const data = res[i];
-                // console.log(data);
-                
-                const dataTesti = `<div class="carousel-item ">
-                <div class="card d-flex justify-content-center align-items-center">
-                <div class="card-body">
-                <p class="card-text text-center">${data.comment}</p>
-                <p class="fw-bold text-center">${data.name}</p>
-                </div>
-                </div>
-                </div>`
-
-                $("#dataTesti").append(dataTesti);
-                
-            }
-        }
-
-    })
-}
-
 // fungsi untuk menanmpilkan semua data product
 function allProduct() {
     swal.fire({
@@ -150,7 +145,7 @@ function allProduct() {
     $("#isiProduct").empty();
 
     $.ajax({
-        url: "https://sheetdb.io/api/v1/9gvkzok724476",
+        url: "https://sheetdb.io/api/v1/65tjhvkctznmh",
         type: "GET",
         success: function (res) {
             if (res.length == 0) {
@@ -159,33 +154,33 @@ function allProduct() {
                 for (let i = 0; i < res.length; i++) {
                     const dataProduct = res[i];
 
-                    console.log(dataProduct.name);
-                //     const isiProduct = ` <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
-                //     <div class="card bg-danger p-2 justify-content-center align-items-center" style="box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.8)">
-                //         <img src="${dataProduct.img}" class="card-img-top" alt="...">
-                //         <div class="card-body text-light">
-                //             <h5 class="card-title text-center">${dataProduct.name}</h5>
-                //             <p class="card-text">Rp.${dataProduct.price}</p>
-                //             <!-- Modal -->
-                //             <div id="outputModal">
-                //                 <!-- isi Modal --></div>
-                //             <!-- endModal -->
-                //             <button
-                //                 type="button"
-                //                 class="btn tombol 
-                //                 btn-cyn m-md-2"
+                    // console.log(dataProduct.name);
+                    const isiProduct = ` <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
+                    <div class="card bg-danger p-2 justify-content-center align-items-center" style="box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.8)">
+                        <img src="${dataProduct.img}" class="card-img-top" alt="...">
+                        <div class="card-body text-light">
+                            <h5 class="card-title text-center">${dataProduct.name}</h5>
+                            <p class="card-text">Rp.${dataProduct.price}</p>
+                            <!-- Modal -->
+                            <div id="outputModal">
+                                <!-- isi Modal --></div>
+                            <!-- endModal -->
+                            <button
+                                type="button"
+                                class="btn tombol 
+                                btn-cyn m-md-2"
 
-                //                 data-bs-toggle="modal"
-                //                 data-bs-target="#detailModal"
-                //                 onclick="showDetail('${dataProduct.img}','${dataProduct.name}', '${dataProduct.price}',  '${dataProduct.deskripsi}', '${dataProduct.stok}')"
-                //             >Lihat Detail</button>
+                                data-bs-toggle="modal"
+                                data-bs-target="#detailModal"
+                                onclick="showDetail('${dataProduct.img}','${dataProduct.name}', '${dataProduct.price}',  '${dataProduct.deskripsi}', '${dataProduct.stok}')"
+                            >Lihat Detail</button>
 
-                //             <a href="https://api.whatsapp.com/send?phone=6285646044393&text=Saya%20Pesan%20${dataProduct.name}%20jumlah%20satu%20harga%20Rp.${dataProduct.price}" class="btn tombol-order ">Order <i class="fa-brands fa-whatsapp"></i> </a>
-                //         </div>
-                //     </div>
-                // </div>`;
+                            <a href="https://api.whatsapp.com/send?phone=6285646044393&text=Saya%20Pesan%20${dataProduct.name}%20jumlah%20satu%20harga%20Rp.${dataProduct.price}" class="btn tombol-order ">Order <i class="fa-brands fa-whatsapp"></i> </a>
+                        </div>
+                    </div>
+                </div>`;
 
-                    // $("#isiProduct").append(isiProduct);
+                    $("#isiProduct").append(isiProduct);
                 }
             }
             swal.close();
@@ -203,7 +198,7 @@ function productMakanan() {
     $("#isiProduct").empty();
 
     $.ajax({
-        url: "https://sheetdb.io/api/v1/9gvkzok724476",
+        url: "https://sheetdb.io/api/v1/65tjhvkctznmh",
         type: "GET",
         success: function (res) {
             if (res.length == 0) {
@@ -256,7 +251,7 @@ function productMinuman() {
     $("#isiProduct").empty();
 
     $.ajax({
-        url: "https://sheetdb.io/api/v1/9gvkzok724476",
+        url: "https://sheetdb.io/api/v1/65tjhvkctznmh",
         type: "GET",
         success: function (res) {
             if (res.length == 0) {
@@ -308,9 +303,37 @@ function showDetail(img, productName, productPrice, deskripsi, stok) {
     });
 }
 
+function dataTestimoni() {
+    $.ajax({
+        url: "https://sheetdb.io/api/v1/k92aevs17oudu",
+        type: "GET",
+        success: function (res) {
 
+            for (let i = 0; i < res.length; i++) {
+                const data = res[i];
+                // console.log(data);
+
+                const activeClass = i === 0 ? "active" : "";
+
+                const dataTesti = `<div class="carousel-item ${activeClass}">
+                <div class="card d-flex justify-content-center align-items-center">
+                <div class="card-body">
+                <p class="card-text text-center">${data.comment}</p>
+                <p class="fw-bold text-center">${data.name}</p>
+                </div>
+                </div>
+                </div>`
+
+                $("#dataTesti").append(dataTesti);
+
+            }
+        }
+
+    });
+}
 
 // panggil fungsi clearform ketika baru di load
 window.onload = clearForm;
 window.onload = allProduct;
 window.onload = dataTestimoni;
+
