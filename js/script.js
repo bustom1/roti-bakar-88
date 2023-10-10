@@ -303,6 +303,7 @@ function showDetail(img, productName, productPrice, deskripsi, stok) {
     });
 }
 
+
 function dataTestimoni() {
     $.ajax({
         url: "https://sheetdb.io/api/v1/k92aevs17oudu",
@@ -336,4 +337,3 @@ function dataTestimoni() {
 window.onload = clearForm;
 window.onload = allProduct;
 window.onload = dataTestimoni;
-
