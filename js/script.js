@@ -82,7 +82,8 @@ $(document).ready(function () {
         $(".panah").css("color", randomColor);
         setTimeout(randomWarna, 1000); // Ubah warna setiap 1 detik
     }
-
+    allProduct();
+    dataTestimoni();
 });
 
 // Function untuk membbersihkan isi comentar ketika di load
@@ -133,7 +134,7 @@ function sendMessage() {
         clearForm();
     }
 }
-
+//#region produk
 // fungsi untuk menanmpilkan semua data product
 function allProduct() {
     swal.fire({
@@ -302,6 +303,7 @@ function showDetail(img, productName, productPrice, deskripsi, stok) {
         confirmButtonText: "OK",
     });
 }
+//#endregion Produk
 
 function dataTestimoni() {
     $.ajax({
@@ -331,9 +333,4 @@ function dataTestimoni() {
 
     });
 }
-
-// panggil fungsi clearform ketika baru di load
-window.onload = clearForm;
-window.onload = allProduct;
-window.onload = dataTestimoni;
 
